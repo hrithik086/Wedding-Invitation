@@ -2,7 +2,7 @@
 body{
     background-color: bisque;
     margin: 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* body {

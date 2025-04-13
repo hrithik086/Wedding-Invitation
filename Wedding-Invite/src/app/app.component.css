@@ -4,6 +4,11 @@
     right: 0;
 }
 
+.leftFlowerDecor{
+
+}
+    
+
 .lordGaneshImage{
     height: 10%;
     width: 10%;
@@ -13,11 +18,11 @@
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
     font-style: normal;
-    font-size: 60px;
+    font-size: 33px;
     margin: 32px 0;
     color: #674ea7;
     display: block;
-    font-size: 3em;
+    /* font-size: 3em; */
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
@@ -27,10 +32,10 @@
 }
 
 .wrap{
-    display: -webkit-flex;
+    /* display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     -webkit-justify-content: center;
     justify-content: center;
     -webkit-align-items: center;
@@ -42,3 +47,22 @@
     left: 0; 
     width: 100%;
 }
+
+
+  .responsive-image {
+    width: 20%; /* Adjust percentage as needed */
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .responsive-image {
+      width: 20%; /* Adjust for smaller screens */
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .responsive-image {
+      width: 30%; /* Further adjust for very small screens */
+    }
+  }
+
