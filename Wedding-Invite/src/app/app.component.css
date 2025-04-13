@@ -1,0 +1,44 @@
+#rightFlowerDecor{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.lordGaneshImage{
+    height: 10%;
+    width: 10%;
+}
+
+.titleSyle{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 60px;
+    margin: 32px 0;
+    color: #674ea7;
+    display: block;
+    font-size: 3em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.wrap{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    z-index: 0; 
+    position: absolute; 
+    top: 10%; 
+    left: 0; 
+    width: 100%;
+}

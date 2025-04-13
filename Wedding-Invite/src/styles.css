@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: bisque;
+    margin: 0px;
+    overflow: hidden;
+}
+
+/* body {
+    /* margin: 0; */
+    /* overflow: hidden; */
+    /* background: skyblue; */
+  /* }  */
+
+.butterfly {
+    position: absolute;
+    font-size: 2rem;
+    animation: fly 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) rotate(360deg);
+    }
+}
+
+.leaf {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    opacity: 0.9;
+    animation-name: fall;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(1100vh); }
+  }
+
+  @keyframes sway {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+  }

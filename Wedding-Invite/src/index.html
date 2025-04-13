@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WeddingInvite</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+  <script>
+    const numButterflies = 10;
+  
+    for (let i = 0; i < numButterflies; i++) {
+      const butterfly = document.createElement("div");
+      butterfly.className = "butterfly";
+      butterfly.innerText = "🩷";
+  
+      const startX = Math.random() * window.innerWidth;
+      const startY = Math.random() * window.innerHeight;
+      const endX = (Math.random() - 0.5) * window.innerWidth;
+      const endY = (Math.random() - 0.5) * window.innerHeight;
+  
+      butterfly.style.left = `${startX}px`;
+      butterfly.style.top = `${startY}px`;
+      butterfly.style.setProperty("--x", `${endX}px`);
+      butterfly.style.setProperty("--y", `${endY}px`);
+      butterfly.style.animationDuration = `${5 + Math.random() * 5}s`;
+  
+      document.body.appendChild(butterfly);
+  
+      // Make it repeat with new random values
+      butterfly.addEventListener("animationiteration", () => {
+        const newX = (Math.random() - 0.5) * window.innerWidth;
+        const newY = (Math.random() - 0.5) * window.innerHeight;
+        butterfly.style.setProperty("--x", `${newX}px`);
+        butterfly.style.setProperty("--y", `${newY}px`);
+      });
+    }
+
+    const leafCount = 50;
+    const leafTypes = ['🍁','🍂','🍃'];
+
+    for (let i = 0; i < leafCount; i++) {
+      const leaf = document.createElement("div");
+      leaf.classList.add("leaf");
+
+      // Random leaf emoji
+      leaf.innerText = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+
+      // Random position and animation
+      const size = 20 + Math.random() * 30;
+      leaf.style.fontSize = `${size}px`;
+      leaf.style.left = `${Math.random() * 100}vw`;
+      leaf.style.top = `${-Math.random() * 20}vh`;
+
+      const fallDuration = 10 + Math.random() * 10;
+      const driftDuration = 10 + Math.random() * 10;
+
+      leaf.style.animationDuration = `${fallDuration}s, ${driftDuration}s`;
+
+      document.body.appendChild(leaf);
+    }
+  </script>
+</body>
+</html>
