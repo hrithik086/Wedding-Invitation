@@ -10,59 +10,40 @@
 </head>
 <body>
   <app-root></app-root>
+  <audio id="backgroudMusic" src="assets/backgroundMusic.mp3" autoplay loop></audio>
+
   <script>
-    const numButterflies = 10;
-  
-    for (let i = 0; i < numButterflies; i++) {
-      const butterfly = document.createElement("div");
-      butterfly.className = "butterfly";
-      butterfly.innerText = "🩷";
-  
-      const startX = Math.random() * window.innerWidth;
-      const startY = Math.random() * window.innerHeight;
-      const endX = (Math.random() - 0.5) * window.innerWidth;
-      const endY = (Math.random() - 0.5) * window.innerHeight;
-  
-      butterfly.style.left = `${startX}px`;
-      butterfly.style.top = `${startY}px`;
-      butterfly.style.setProperty("--x", `${endX}px`);
-      butterfly.style.setProperty("--y", `${endY}px`);
-      butterfly.style.animationDuration = `${5 + Math.random() * 5}s`;
-  
-      document.body.appendChild(butterfly);
-  
-      // Make it repeat with new random values
-      butterfly.addEventListener("animationiteration", () => {
-        const newX = (Math.random() - 0.5) * window.innerWidth;
-        const newY = (Math.random() - 0.5) * window.innerHeight;
-        butterfly.style.setProperty("--x", `${newX}px`);
-        butterfly.style.setProperty("--y", `${newY}px`);
-      });
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+      function createFlower() {
+        const flower = document.createElement('div');
+        var flowersArr = ['🌸', '🍃', '🍂'];
+        flower.textContent = flowersArr[Math.floor(Math.random() * flowersArr.length)];
+        flower.style.position = 'absolute';
+        flower.style.top = '-50px';
+        flower.style.left = Math.random() * window.innerWidth + 'px';
+        flower.style.fontSize = Math.random() * 20 + 20 + 'px';
+        flower.style.animation = `fall ${Math.random() * 3 + 2}s linear`;
+        document.body.appendChild(flower);
 
-    const leafCount = 0;
-    const leafTypes = ['🍁','🍂','🍃'];
+        flower.addEventListener('animationend', () => {
+          flower.remove();
+        });
+      }
 
-    for (let i = 0; i < leafCount; i++) {
-      const leaf = document.createElement("div");
-      leaf.classList.add("leaf");
+      setInterval(createFlower, 200);
 
-      // Random leaf emoji
-      leaf.innerText = leafTypes[Math.floor(Math.random() * leafTypes.length)];
-
-      // Random position and animation
-      const size = 20 + Math.random() * 30;
-      leaf.style.fontSize = `${size}px`;
-      leaf.style.left = `${Math.random() * 100}vw`;
-      leaf.style.top = `${-Math.random() * 20}vh`;
-
-      const fallDuration = 10 + Math.random() * 10;
-      const driftDuration = 10 + Math.random() * 10;
-
-      leaf.style.animationDuration = `${fallDuration}s, ${driftDuration}s`;
-
-      document.body.appendChild(leaf);
-    }
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fall {
+          to {
+            transform: translateY(100vh);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    });
   </script>
+
 </body>
 </html>
