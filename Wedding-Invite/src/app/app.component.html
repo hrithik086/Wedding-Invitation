@@ -13,6 +13,59 @@
   <h1 class="titleSyle">with 💝</h1>
   <h1 class="titleSyle" style="font-size:43px;">{{brideName}}  👰</h1>
   <h1 class="titleSyle">Daughter of Smt. {{brideMotherName}} & Sri {{brideFatherName}}</h1>
-  <h1 class="titleSyle">On {{marrigaeDate}}</h1>
-  <h1 class="titleSyle">At {{location}}</h1>
+  <h1 class="titleSyle">On {{marriageDate.toString() | date:'fullDate'}}</h1>
+  <!-- <h1 class="titleSyle">At {{marriageLocation}}</h1> -->
+  <div>
+    <div class="countdown-timer">
+      <div class="tile">
+        <span class="number" id="days">00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="hours">00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="minutes">00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="seconds">00</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+  </div>
+  <input type="text" id="hiddenMarriageDateValue" value="{{marriageDate.toString()}}" hidden>
+  
+  <h1 class="titleSyle">Followed by Reception on</h1>
+  <h1 class="titleSyle">{{receptionDate | date:'fullDate'}}</h1>
+  <input type="text" id="hiddenReceptionDateValue" value="{{receptionDate.toString()}}" hidden>
+  <div>
+    <div class="countdown-timer">
+      <div class="tile">
+        <span class="number" id="receptionDays">00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="receptionHours">00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="receptionMinutes">00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="tile">
+        <span class="number" id="receptionSeconds">00</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+  </div>
+  <div class="map-button-container">
+    <button type="button" class="btn btn-lg btn-primary" (click)="openMarriageLocationLink()">
+      <i class="fa-solid fa-location-dot"></i> Marriage Venue
+    </button>
+    <button type="button" class="btn btn-lg btn-secondary" (click)="openReceptionLocationLink()" style="margin-left: 30px;" >
+      <i class="fa-solid fa-location-dot"></i> Reception Venue
+    </button>
+  </div>
 </div>

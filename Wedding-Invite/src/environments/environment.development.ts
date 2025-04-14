@@ -10,6 +10,10 @@ export const environment = {
     brideName : 'Bride Name',
     elderOrYounger: "younger",
     sonOrDaughter: "son",
-    marrigaeDate: "13th April 2025",
-    location: "Location Name",
+    marriageDate: "2026-04-14T10:30:00Z",
+    marriageLocation: "Location Name",
+    marriageLocationLink: "https://maps.app.goo.gl/cPFgX3eHBoKwwVQi6",
+    receptionDate: "2026-04-19T10:30:00Z",
+    receptionLocation: "Location Name",
+    receptionLocationLink: "https://maps.app.goo.gl/sZddg83zt2M59iP77",
 };
