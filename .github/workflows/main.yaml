@@ -28,9 +28,9 @@ jobs:
         npm run build
 
     - name: Deploy
-      if: success()
-      uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: dist/Wedding-Invite
-        enable_jekyll: true
+        run: |
+          npx angular-cli-ghpages --dir=dist/your-angular-app
+      env:
+        CI: true
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
