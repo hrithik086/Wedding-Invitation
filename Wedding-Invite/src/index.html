@@ -58,7 +58,7 @@
         let timeDiff = (marriageDate.getTime() - new Date().getTime())/1000;
         let days = Math.floor(timeDiff/(3600*24));
         document.getElementById('days').innerHTML = days>0 ? days : "00";
-        timeDiff-=days*3600;
+        timeDiff-=days*3600*24;
         let hours = Math.floor(timeDiff/3600);
         document.getElementById('hours').innerHTML = hours>0 ? hours : "00";
         timeDiff-=hours*3600;
@@ -76,7 +76,7 @@
         let timeDiff = (marriageDate.getTime() - new Date().getTime())/1000;
         let days = Math.floor(timeDiff/(3600*24));
         document.getElementById('receptionDays').innerHTML = days>0 ? days : "00";
-        timeDiff-=days*3600;
+        timeDiff-=days*3600*24;
         let hours = Math.floor(timeDiff/3600);
         document.getElementById('receptionHours').innerHTML = hours>0 ? hours : "00";
         timeDiff-=hours*3600;

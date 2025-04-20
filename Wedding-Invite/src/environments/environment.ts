@@ -10,10 +10,10 @@ export const environment = {
     brideName : 'Lipsa',
     elderOrYounger: "younger",
     sonOrDaughter: "son",
-    marriageDate: "2025-05-09T19:00:00Z",
+    marriageDate: "2025-05-09T13:30:00Z", //Mention UTC date here
     marriageLocation: "Golia",
     marriageLocationLink: "https://maps.app.goo.gl/UR8bbyVKJrRJEgHAA",
-    receptionDate: "2025-05-14T07:00:00Z",
+    receptionDate: "2025-05-14T13:30:00Z", //Mention UTC date here
     receptionLocation: "Belur Gram Rakshi Bahini",
     receptionLocationLink: "https://maps.app.goo.gl/avaYoP5pmKCjczm5A",
 };
