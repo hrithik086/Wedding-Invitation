@@ -16,12 +16,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '20'
-        
-    - name: Change Directory
-      run: cd Wedding-Invite
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd Wedding-Invite
+        npm install
       
     - name: Build
       run: npm run build
