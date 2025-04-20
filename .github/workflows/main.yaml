@@ -18,6 +18,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
+      run: cd Wedding-Invite
       run: npm install
       
     - name: Build
@@ -28,5 +29,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: dist/Wedding-Invitation
+        publish_dir: dist/Wedding-Invite
         enable_jekyll: true
